@@ -8,16 +8,12 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
   </head>
   <body ng-app="WistiaVideoUploader">
-    <div class="container-fluid main-wrapper">
+    <div class="container-fluid">
       <div class="col-md-4 col-sm-3 col-xs-2"></div>
-      <div class="col-md-4 col-sm-8 col-xs-10">
-        <div class="divider-30"></div>
-        <div class="logo text-center"><h2>Wistia Video Uploader</h2></div>
-        <div class="divider-30"></div>
-        <file-uploader></file-uploader>
-        <div class="divider-30"></div>
+      <div>
+        <div class="text-center"><h2>Wistia Video Uploader</h2></div>
+        <file-uploader progress="progress"></file-uploader>
       </div>
-      <div class="col-md-3 col-sm-2"></div>
     </div>
     <script
       src="https://code.jquery.com/jquery-1.12.4.min.js"

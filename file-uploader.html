@@ -1,3 +1,8 @@
-<div class="well clearfix">
+<div class="col-md-8 well clearfix">
   <input id="fileupload" class="form-control" name="file"  type="file" accept="video/*" />
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="{{$ctrl.progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$ctrl.progress}}%;">
+  </div>
 </div>
+<video-player video="{{$ctrl.videoLink}}" hasvideo="{{$ctrl.hasVideo}}">
+</video-player>
