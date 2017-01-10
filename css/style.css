@@ -1,0 +1,33 @@
+body {
+
+}
+
+input, button {
+  margin: 10px 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.main-wrapper {
+  margin-top: 20px;
+}
+
+.divider-30 {
+  display: block;
+  clear: both;
+  float: left;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  width: 100%;
+}
+
+.table {
+  float: left;
+  margin-top: 40px;
+}
+
+#display {
+  text-align: right;
+}
