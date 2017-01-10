@@ -17,11 +17,11 @@ angular.module('WistiaVideoUploader', [])
             ];
           },
           done: function (e, data) {
-            var url = "http://fast.wistia.net/embed/iframe/" + data.result.hashed_id;
+            var url = "//fast.wistia.net/embed/iframe/" + data.result.hashed_id;
             defer.resolve(url);
           },
           progress: function (e, data) {
-            $rootScope.progress = parseInt(data.loaded / data.total * 100, 10);
+            $rootScope.$broadcast('progress', parseInt(data.loaded / data.total * 100, 10));
           }
         });
 
@@ -34,12 +34,18 @@ angular.module('WistiaVideoUploader', [])
     bindings: {
       progress: '<'
     },
-    controller: function($window, FetchVideo, $rootScope) {
+    controller: function($window, FetchVideo, $rootScope, $timeout) {
       var ctrl = this;
 
       FetchVideo.url().then(function(url) {
         ctrl.videoLink = url;
         ctrl.hasVideo = true;
+      });
+
+      $rootScope.$on( 'progress', function(e, progress) {
+        ctrl.progress = progress;
+        // Hack: Variable not updating unless this called. Weird!!! Still investigating :)
+        $timeout();
       });
     }
   })
